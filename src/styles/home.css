@@ -447,6 +447,7 @@ body {
 
 .--title {
   font-size: 25px;
+  line-height: 30px;
   font-weight: bold;
   color: #f90;
   text-align: center;
@@ -692,6 +693,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 .background .background__text .background__text-text {
   margin-top: 20px;
@@ -716,6 +718,7 @@ body {
 }
 .background .people .people__img {
   width: 400px;
+  z-index: -1;
 }
 
 .count-down__flash-sale {
@@ -1399,6 +1402,11 @@ footer .container .wrapper__footer .footer-right .wrapper__icon {
 footer .container .wrapper__footer .footer-right .wrapper__icon > img {
   width: 56px;
 }
+@media screen and (max-width: 1262px) {
+  .background {
+    background-size: 60%;
+  }
+}
 @media screen and (max-width: 1200px) {
   .header .wrapper__header .header__menu-mobile {
     display: block;
@@ -1408,5 +1416,57 @@ footer .container .wrapper__footer .footer-right .wrapper__icon > img {
   }
   .header .wrapper__header .header__button {
     display: none;
+  }
+  .background .people .people__img {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .count-down__flash-sale .wrapper__countdown .countdown__clock .clock {
+    padding: 0px 45px;
+  }
+}
+@media screen and (max-width: 993px) {
+  .--title {
+    font-size: 22px;
+  }
+  .background {
+    background-size: 68%;
+  }
+  .count-down__flash-sale {
+    padding-top: 20px;
+  }
+  .count-down__flash-sale .wrapper__countdown .countdown__clock .clock {
+    padding: 0px 0px;
+  }
+  .count-down__flash-sale .wrapper__countdown .countdown__clock {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .--title {
+    font-size: 20px;
+  }
+  .background {
+    background-size: 100%;
+  }
+  .background .people {
+    top: auto;
+    bottom: 0;
+  }
+  .background .people .people__img {
+    width: 228px;
+  }
+  .background .background__text {
+    width: 420px;
+  }
+  .background .background__text .background__text-text {
+    font-size: 16px;
+  }
+  .background .background__text .icon__sale {
+    left: -10%;
+  }
+  .background .background__text .icon__sale .icon__sale-img {
+    width: 60px;
   }
 }/*# sourceMappingURL=home.css.map */
