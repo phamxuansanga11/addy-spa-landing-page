@@ -200,14 +200,17 @@ const inputEmail = document.getElementById("email");
 const inputPhoneNumber = document.getElementById("phoneNumber");
 const inputContent = document.getElementById("content");
 
-const inputHandler = function () {
-  validateForm();
+const PATTERN = {
+  EMAIL: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
+  PHONE: /((^(\+84|84|0|0084){1})(3|5|7|8|9))+([0-9]{8})\b/i,
+  VARIABLE_NAME: /^[a-zA-Z_$][a-zA-Z_$0-9]*$/i,
+  ONLY_NUMBER: /^[0-9]*$/,
 };
 
-inputFullName.addEventListener("input", inputHandler);
-inputEmail.addEventListener("input", inputHandler);
-inputPhoneNumber.addEventListener("input", inputHandler);
-inputContent.addEventListener("input", inputHandler);
+inputFullName.addEventListener("input", validateFullName);
+inputEmail.addEventListener("input", validateEmail);
+inputPhoneNumber.addEventListener("input", validatePhoneNumber);
+inputContent.addEventListener("input", validateContent);
 
 function validateForm() {
   let fullName = document.forms["myForm"]["fullName"].value;
@@ -226,6 +229,10 @@ function validateForm() {
     textErrorEmail.textContent = "Vui lòng nhập email.";
     inputEmail.classList.add("error");
     return false;
+  } else if (!email.match(PATTERN.EMAIL)) {
+    textErrorEmail.textContent = "Email sai định dạng.";
+    inputEmail.classList.add("error");
+    return false;
   } else if (email !== "") {
     textErrorEmail.textContent = "";
     inputEmail.classList.remove("error");
@@ -234,10 +241,67 @@ function validateForm() {
     textErrorPhoneNumber.textContent = "Vui lòng nhập số điện thoại.";
     inputPhoneNumber.classList.add("error");
     return false;
+  } else if (!phoneNumber.match(PATTERN.PHONE)) {
+    textErrorPhoneNumber.textContent = "Số điện thoại sai định dạng.";
+    inputPhoneNumber.classList.add("error");
+    return false;
   } else if (phoneNumber !== "") {
     textErrorPhoneNumber.textContent = "";
     inputPhoneNumber.classList.remove("error");
   }
+  if (content == "") {
+    textErrorContent.textContent = "Vui lòng nhập nội dung liên hệ.";
+    inputContent.classList.add("error");
+    return false;
+  } else if (content !== "") {
+    textErrorContent.textContent = "";
+    inputContent.classList.remove("error");
+  }
+}
+function validateFullName() {
+  let fullName = document.forms["myForm"]["fullName"].value;
+  if (fullName == "") {
+    textErrorFullName.textContent = "Vui lòng nhập họ và tên.";
+    inputFullName.classList.add("error");
+    return false;
+  } else if (fullName !== "") {
+    textErrorFullName.textContent = "";
+    inputFullName.classList.remove("error");
+  }
+}
+function validateEmail() {
+  let email = document.forms["myForm"]["email"].value;
+  if (email == "") {
+    textErrorEmail.textContent = "Vui lòng nhập email.";
+    inputEmail.classList.add("error");
+    return false;
+  } else if (!email.match(PATTERN.EMAIL)) {
+    textErrorEmail.textContent = "Email sai định dạng.";
+    inputEmail.classList.add("error");
+    return false;
+  } else if (email !== "") {
+    textErrorEmail.textContent = "";
+    inputEmail.classList.remove("error");
+  }
+}
+function validatePhoneNumber() {
+  let phoneNumber = document.forms["myForm"]["phoneNumber"].value;
+
+  if (phoneNumber == "") {
+    textErrorPhoneNumber.textContent = "Vui lòng nhập số điện thoại.";
+    inputPhoneNumber.classList.add("error");
+    return false;
+  } else if (!phoneNumber.match(PATTERN.PHONE)) {
+    textErrorPhoneNumber.textContent = "Số điện thoại sai định dạng.";
+    inputPhoneNumber.classList.add("error");
+    return false;
+  } else if (phoneNumber !== "") {
+    textErrorPhoneNumber.textContent = "";
+    inputPhoneNumber.classList.remove("error");
+  }
+}
+function validateContent() {
+  let content = document.forms["myForm"]["content"].value;
   if (content == "") {
     textErrorContent.textContent = "Vui lòng nhập nội dung liên hệ.";
     inputContent.classList.add("error");
