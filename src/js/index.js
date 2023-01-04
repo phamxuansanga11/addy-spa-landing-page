@@ -13,6 +13,12 @@ var flkty = new Flickity(elem, {
 //main js
 const navItem = document.querySelectorAll(".header__menu-item");
 
+//get menu mobile
+const menuBar = document.querySelector(".icon__bar");
+const menuMobile = document.querySelector(".header__menu-mobile");
+//close menu
+const btnCloseMenu = document.querySelector(".btn__close");
+
 //click menu scroll to section
 // const sections = [];
 navItem.forEach((tagA, index) => {
@@ -22,6 +28,7 @@ navItem.forEach((tagA, index) => {
   // sections.push(classSection);
   tagA.addEventListener("click", (e) => {
     e.preventDefault();
+    menuMobile.classList.remove("active");
     navItem.forEach((item) => {
       item.classList.remove("active");
     });
@@ -46,16 +53,9 @@ btnContact.addEventListener("click", (e) => {
   });
 });
 
-//get menu mobile
-const menuBar = document.querySelector(".icon__bar");
-const menuMobile = document.querySelector(".header__menu-mobile");
-
 menuBar.addEventListener("click", () => {
   menuMobile.classList.add("active");
 });
-
-//close menu
-const btnCloseMenu = document.querySelector(".btn__close");
 
 btnCloseMenu.addEventListener("click", () => {
   menuMobile.classList.remove("active");
