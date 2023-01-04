@@ -469,6 +469,28 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    // background: linear-gradient(
+    //   180deg,
+    //   rgb(225, 155, 58) 1%,
+    //   rgb(52, 49, 230) 95%
+    // );
+    border-radius: 10px;
+    background-color: #ffae00c7;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgb(228, 228, 228);
+  }
+}
+
+main {
+  overflow: hidden;
+}
+
 $blue-color: #007bff;
 $blue-color-addy: #0a67e9;
 $blue-color-other: #0a1e87;
@@ -500,6 +522,21 @@ $orange-color-border: #ffbe5c;
   font-size: 45px;
   font-weight: bold;
   color: #fff;
+}
+
+.--text-error {
+  color: red;
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+.wrapper__icon-footer {
+  display: block;
+  width: 56px;
+  height: 56px;
+  > img {
+    width: 100%;
+  }
 }
 
 .header {
@@ -785,7 +822,7 @@ $orange-color-border: #ffbe5c;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     .countdown__clock {
-      padding-top: 20px;
+      padding-top: 40px;
       text-align: center;
       .comming__soon-title {
         font-size: 40px;
@@ -1132,6 +1169,7 @@ $orange-color-border: #ffbe5c;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 50px;
       .price__content-item {
+        overflow: hidden;
         position: relative;
         outline: none;
         margin: 20px auto;
@@ -1141,6 +1179,21 @@ $orange-color-border: #ffbe5c;
         -webkit-box-shadow: 0px 0px 8px 1px #ccc;
         box-shadow: 0px 0px 8px 1px #ccc;
         transition: 0.2s;
+        .favourite {
+          position: absolute;
+          top: 23px;
+          right: -65px;
+          background-color: $pink-color;
+          width: 200px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: rotate(45deg);
+          > p {
+            color: #fff;
+          }
+        }
         &:hover {
           -webkit-box-shadow: 7px -7px 0px 2px $orange-color-hover;
           box-shadow: 7px -7px 0px 2px $orange-color-hover;
@@ -1153,7 +1206,7 @@ $orange-color-border: #ffbe5c;
           text-align: center;
           .top__title {
             width: fit-content;
-            padding: 0 20px;
+            padding: 0 10px;
             height: 30px;
             // background-color: #eaeffd;
             background-color: $orange-color;
@@ -1240,7 +1293,22 @@ $orange-color-border: #ffbe5c;
 
 .contact {
   margin-top: 30px;
+  padding-top: 30px;
   padding-bottom: 30px;
+  background: linear-gradient(0deg, #9fb0ee, #9fb0ee);
+  position: relative;
+  .contact__bg-top {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .contact__bg-bottom {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    right: -338px;
+  }
   .container {
     .wrapper__form-contact {
       display: grid;
@@ -1264,29 +1332,38 @@ $orange-color-border: #ffbe5c;
       .contact__right {
         .contact__form {
           > h3 {
-            font-size: 25px;
-            color: #f90;
-            margin-bottom: 20px;
+            font-size: 22px;
+            color: #1d1d1d;
+            font-weight: bold;
           }
           padding: 40px;
           border-radius: 22px;
-          border: 2px solid $orange-color;
+          background-color: #fff;
           .form__group {
             > input {
               padding: 10px;
-              border: 1px solid $orange-color;
+              border: 1px solid #bdbdbd;
               border-radius: 10px;
-              width: 100%;
-              margin-bottom: 20px;
+              width: 96%;
+              margin-top: 17px;
+              margin-bottom: 3px;
+              &.error {
+                border: 1px solid red;
+              }
               &:focus {
                 outline: none;
               }
             }
             > textarea {
+              margin-top: 17px;
+              margin-bottom: 3px;
               padding: 10px;
-              border: 1px solid $orange-color;
+              border: 1px solid #bdbdbd;
               border-radius: 10px;
-              width: 100%;
+              width: 96%;
+              &.error {
+                border: 1px solid red;
+              }
               &:focus {
                 outline: none;
               }
@@ -1375,6 +1452,7 @@ $orange-color-border: #ffbe5c;
       color: #051f4d;
       font-weight: bold;
       font-size: 30px;
+      line-height: 28px;
       text-align: center;
       margin-bottom: 20px;
     }
@@ -1384,62 +1462,54 @@ $orange-color-border: #ffbe5c;
       line-height: 22px;
       max-width: 400px;
       margin: auto;
+      margin-bottom: 38px;
     }
     .wrapper__slider {
-      .slider__item {
-        width: 100%;
-        overflow: hidden;
-        .wrapper__grid {
-          margin-top: 30px;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 50px;
-          .grid__item {
+      .grid__item {
+        display: flex;
+        width: 50%;
+        .grid__item-left {
+          width: 144px;
+          border-radius: 50%;
+          overflow: hidden;
+          > img {
+            height: 144px;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .grid__item-right {
+          margin-left: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .customer__name-and-star {
             display: flex;
-            margin: auto;
-            .grid__item-left {
-              width: 144px;
-              border-radius: 50%;
-              overflow: hidden;
+            justify-content: space-between;
+            > h4 {
+              color: #051f4d;
+              font-weight: bold;
+              font-size: 18px;
+            }
+            .wrapper__star {
+              margin-right: 20px;
               > img {
-                width: 100%;
-                object-fit: cover;
+                width: 20px;
+                // border-radius: 50%;
               }
             }
-            .grid__item-right {
-              margin-left: 20px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              .customer__name-and-star {
-                display: flex;
-                justify-content: space-between;
-                > h4 {
-                  color: #051f4d;
-                  font-weight: bold;
-                  font-size: 18px;
-                }
-                .wrapper__star {
-                  margin-right: 20px;
-                  > img {
-                    width: 20px;
-                    // border-radius: 50%;
-                  }
-                }
-              }
-              .text {
-                color: #051f4d;
-                font-size: 14px;
-                line-height: 1.6rem;
-                max-width: 300px;
-              }
-              .sub__text {
-                color: #051f4d;
-                font-weight: bold;
-                font-size: 14px;
-                line-height: 1.2rem;
-              }
-            }
+          }
+          .text {
+            color: #051f4d;
+            font-size: 14px;
+            line-height: 1.6rem;
+            max-width: 300px;
+          }
+          .sub__text {
+            color: #051f4d;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.2rem;
           }
         }
       }
@@ -1489,12 +1559,9 @@ footer {
           font-weight: bold;
         }
         .wrapper__icon {
+          display: flex;
           margin: 20px 0;
-          > img {
-            width: 56px;
-          }
-        }
-        > img {
+          gap: 10px;
         }
       }
     }
@@ -1529,6 +1596,21 @@ footer {
     .addy__diff-number::after {
     width: 204px;
   }
+  footer .container .wrapper__footer {
+    gap: 100px;
+    padding: 0px 56px;
+    .footer-right {
+      padding-left: 50px;
+    }
+  }
+  .option
+    .container
+    .solutions__marketing
+    .wrapper__solutions
+    .wrapper__title
+    > h2 {
+    font-size: 19px;
+  }
 }
 
 @media screen and(max-width: 1100px) {
@@ -1544,6 +1626,9 @@ footer {
   }
   .price .container .price__content {
     gap: 26px;
+  }
+  .count-down__flash-sale .wrapper__countdown .countdown__clock {
+    padding-top: 20px;
   }
 }
 
@@ -1611,6 +1696,27 @@ footer {
     grid-template-columns: 1fr;
     padding: 0 60px;
   }
+  footer .container .wrapper__footer {
+    gap: 48px;
+    padding: 0px 30px;
+  }
+  .reply__ofcustomer .container .wrapper__slider .grid__item {
+    width: 100%;
+    justify-content: center;
+  }
+  .contact
+    .container
+    .wrapper__form-contact
+    .contact__right
+    .contact__form
+    .form__group {
+    > input {
+      width: 97%;
+    }
+    > textarea {
+      width: 97%;
+    }
+  }
 }
 
 @media screen and(max-width: 768px) {
@@ -1661,6 +1767,19 @@ footer {
   }
   .achievements .container .wrapper__box {
     grid-template-columns: 1fr 1fr;
+  }
+  footer .container .wrapper__footer {
+    grid-template-columns: 1fr;
+    padding: 0px 0px;
+    .footer-right {
+      padding-left: 0;
+    }
+  }
+  .header
+    .wrapper__header
+    .header__menu-mobile.active
+    .header__menu-mobile__nav {
+    width: 45%;
   }
 }
 
@@ -1773,6 +1892,25 @@ footer {
   .price .container .price__content .price__content-item {
     margin: 0 0;
   }
+  .header
+    .wrapper__header
+    .header__menu-mobile.active
+    .header__menu-mobile__nav {
+    width: 58%;
+    padding: 24px 28px;
+  }
+  .reply__ofcustomer .container > h3 {
+    font-size: 25px;
+  }
+  .contact
+    .container
+    .wrapper__form-contact
+    .contact__right
+    .contact__form
+    .form__group
+    > input {
+    width: 95%;
+  }
 }
 
 @media screen and(max-width: 495px) {
@@ -1840,6 +1978,14 @@ footer {
     width: 80%;
     margin: auto;
   }
+  .happy__newyear .container .happy__newyear-bonus::before {
+    width: 51px;
+    left: -1%;
+  }
+  .happy__newyear .container .happy__newyear-bonus::after {
+    right: -2%;
+    width: 51px;
+  }
 }
 
 @media screen and(max-width: 444px) {
@@ -1863,6 +2009,22 @@ footer {
     .wrapper__title
     > h2 {
     line-height: 21px;
+  }
+  .header
+    .wrapper__header
+    .header__menu-mobile.active
+    .header__menu-mobile__nav {
+    width: 66%;
+    padding: 24px 26px;
+    padding-right: 10px;
+  }
+  .contact
+    .container
+    .wrapper__form-contact
+    .contact__right
+    .contact__form
+    > h3 {
+    font-size: 17px;
   }
 }
 

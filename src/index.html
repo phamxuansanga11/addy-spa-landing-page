@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/flickity.css" />
     <link rel="stylesheet" href="styles/home.css" />
     <title>Addy Spa</title>
@@ -12,13 +13,13 @@
     <header class="header">
       <div class="container">
         <div class="wrapper__header">
-          <div class="header__logo">
+          <a href="#" class="header__logo">
             <img
               src="/src/img/logo-addy.png"
               alt="addy.vn"
               class="header__logo-img"
             />
-          </div>
+          </a>
           <ul class="header__menu">
             <li>
               <a href="#about" class="header__menu-item active">Giới thiệu</a>
@@ -36,7 +37,9 @@
               <a class="header__menu-item-contact" href="#contact">Liên hệ</a>
             </div>
             <div class="header__button-register --header__btn">
-              <a href="">Sử dụng miễn phí</a>
+              <a href="https://www.addycrm.com/dang-ky/" target="_blank"
+                >Sử dụng miễn phí</a
+              >
             </div>
           </div>
           <div class="header__menu-mobile">
@@ -71,10 +74,12 @@
               </ul>
               <div class="wrapper__btn">
                 <div class="header__button-contact --btn">
-                  <a href="#">Liên hệ</a>
+                  <a href="#contact">Liên hệ</a>
                 </div>
                 <div class="header__button-register --btn">
-                  <a href="#">Sử dụng miễn phí</a>
+                  <a href="https://www.addycrm.com/dang-ky/" target="_blank"
+                    >Sử dụng miễn phí</a
+                  >
                 </div>
               </div>
             </div>
@@ -108,7 +113,7 @@
           PHẦN MỀM QUẢN LÝ SPA – GIẢI PHÁP MỚI CHO NGÀNH LÀM ĐẸP
         </h2>
         <div class="container">
-          <div class="wrapper__countdown">
+          <div class="wrapper__countdown" data-aos="flip-up">
             <div class="countdown__clock">
               <h3 class="comming__soon-title">Coming Soon</h3>
               <p class="comming__soon-text">
@@ -117,27 +122,27 @@
               <div class="clock">
                 <div class="clock__item">
                   <div class="wrapper__number">
-                    <p class="number">30</p>
+                    <p class="number --days">30</p>
                   </div>
-                  <p>DAYS</p>
+                  <p>Ngày</p>
                 </div>
                 <div class="clock__item">
                   <div class="wrapper__number">
-                    <p class="number">16</p>
+                    <p class="number --hours">0</p>
                   </div>
-                  <p>HOURS</p>
+                  <p>Giờ</p>
                 </div>
                 <div class="clock__item">
                   <div class="wrapper__number">
-                    <p class="number">44</p>
+                    <p class="number --minutes">1</p>
                   </div>
-                  <p>MINUTES</p>
+                  <p>Phút</p>
                 </div>
                 <div class="clock__item">
                   <div class="wrapper__number">
-                    <p class="number">59</p>
+                    <p class="number --seconds">14</p>
                   </div>
-                  <p>SECOND</p>
+                  <p>Giây</p>
                 </div>
               </div>
               <p class="comming__soon-sub-text">
@@ -158,21 +163,21 @@
         <h2 class="--title">Tại sao phải sử dụng Addy Spa?</h2>
         <div class="container">
           <div class="wrapper__option">
-            <div class="option__item">
+            <div class="option__item" data-aos="flip-up">
               <img
                 src="/src/img/CurrencyCircleDollar.png"
                 alt="CHI PHÍ MARKETING ĐẮT ĐỎ"
               />
               <p class="option__item-text">Chi phí marketing đắt đỏ</p>
             </div>
-            <div class="option__item">
+            <div class="option__item" data-aos="flip-up">
               <img
                 src="/src/img/UsersThree.png"
                 alt="Quá nhiều khách hàng cần chăm sóc"
               />
               <p class="option__item-text">Quá nhiều khách hàng cần chăm sóc</p>
             </div>
-            <div class="option__item">
+            <div class="option__item" data-aos="flip-up">
               <img
                 src="/src/img/ChartBar.png"
                 alt="Vì là ngành hot nên sự cạnh tranh ngày càng cao"
@@ -183,7 +188,7 @@
             </div>
           </div>
           <div class="solutions__marketing">
-            <div class="wrapper__solutions">
+            <div class="wrapper__solutions" data-aos="fade-right">
               <div class="wrapper__title">
                 <h2>Giải pháp Marketing ngành làm đẹp</h2>
               </div>
@@ -205,7 +210,7 @@
                 <li>Dễ dàng điều chỉnh kế hoạch marketing</li>
               </ul>
             </div>
-            <div class="solutions__marketing-img">
+            <div class="solutions__marketing-img" data-aos="fade-left">
               <img
                 src="./img//people2.png"
                 alt="GIẢI PHÁP MARKETING NGÀNH LÀM ĐẸP"
@@ -218,10 +223,10 @@
         <div class="container">
           <h2 class="--title">Về chúng tôi</h2>
           <div class="about__grid">
-            <div class="about__grid-left">
+            <div class="about__grid-left" data-aos="fade-right">
               <img src="./img/home-1.png" alt="addy crm spa" />
             </div>
-            <div class="about__grid-right">
+            <div class="about__grid-right" data-aos="fade-left">
               <p class="text">
                 Addy được thành lập với khát vọng mang đến giải pháp quản trị
                 khách hàng miễn phí trên nền tảng Zalo và là doanh nghiệp tiên
@@ -259,19 +264,19 @@
             tôi chúc bạn một kỳ nghỉ lễ đẹp và năm mới nhiều niềm vui.
           </p>
           <div class="wrapper__registrations">
-            <div class="registrations__item">
+            <div class="registrations__item" data-aos="fade-up">
               <div class="registrations__item-box">
                 <p>05</p>
               </div>
               <p class="registrations__item-text">Lượt đăng ký hôm nay</p>
             </div>
-            <div class="registrations__item">
+            <div class="registrations__item" data-aos="fade-up">
               <div class="registrations__item-box">
                 <p>26</p>
               </div>
               <p class="registrations__item-text">Lượt đăng ký ba ngày qua</p>
             </div>
-            <div class="registrations__item">
+            <div class="registrations__item" data-aos="fade-up">
               <div class="registrations__item-box">
                 <p>68</p>
               </div>
@@ -283,7 +288,7 @@
       <section class="addy__different">
         <h3>Điểm khác biệt của Addy</h3>
         <div class="addy__different-content">
-          <div class="content__item --left">
+          <div class="content__item --left" data-aos="fade-right">
             <div class="content__item-detail">
               <h4 class="addy__diff-title">Miễn Phí</h4>
               <span class="addy__diff-number">01</span>
@@ -299,10 +304,10 @@
               </p>
             </div>
           </div>
-          <div class="content__img">
+          <div class="content__img" data-aos="fade-up">
             <img src="./img/difference-addy.png" alt="addy different" />
           </div>
-          <div class="content__item --right">
+          <div class="content__item --right" data-aos="fade-left">
             <div class="content__item-detail">
               <h4 class="addy__diff-title">Zalo cá nhân</h4>
               <span class="addy__diff-number">03</span>
@@ -324,7 +329,7 @@
         <div class="container">
           <h2 class="--title">BẢNG GIÁ THAM KHẢO</h2>
           <div class="price__content">
-            <div class="price__content-item">
+            <div class="price__content-item" data-aos="fade-right">
               <div class="top">
                 <div class="top__title">
                   <p>Gói miễn phí</p>
@@ -366,7 +371,10 @@
                 </a>
               </div>
             </div>
-            <div class="price__content-item">
+            <div class="price__content-item" data-aos="fade-right">
+              <div class="favourite">
+                <p>Yêu thích</p>
+              </div>
               <div class="top">
                 <div class="top__title">
                   <p>Gói cơ bản</p>
@@ -408,7 +416,7 @@
                 </a>
               </div>
             </div>
-            <div class="price__content-item">
+            <div class="price__content-item" data-aos="fade-left">
               <div class="top">
                 <div class="top__title">
                   <p>Gói nâng cao</p>
@@ -456,7 +464,7 @@
                 </a>
               </div>
             </div>
-            <div class="price__content-item">
+            <div class="price__content-item" data-aos="fade-left">
               <div class="top">
                 <div class="top__title">
                   <p>Gói cao cấp</p>
@@ -508,9 +516,15 @@
         </div>
       </section>
       <section class="contact">
+        <div class="contact__bg-top">
+          <img src="./img/bg-top.png" alt="addy spa" />
+        </div>
+        <div class="contact__bg-bottom">
+          <img src="./img/bg-top.png" alt="addy spa" />
+        </div>
         <div class="container">
           <div class="wrapper__form-contact">
-            <div class="contact__left">
+            <div class="contact__left" data-aos="fade-right">
               <h3>Đăng ký nhận tư vấn miễn phí</h3>
               <p class="contact__left-text">
                 Addy thấu hiểu và luôn mong muốn giúp doanh nghiệp tiếp cận được
@@ -519,35 +533,40 @@
                 tăng doanh thu bền vững.
               </p>
             </div>
-            <div class="contact__right">
-              <form class="contact__form" action="">
+            <div class="contact__right" data-aos="fade-left">
+              <form
+                class="contact__form"
+                action=""
+                name="myForm"
+                onsubmit="return validateForm()"
+              >
                 <h3>ĐĂNG KÝ NHẬN TƯ VẤN</h3>
                 <div class="form__group">
                   <input
-                    required
                     type="text"
                     name="fullName"
                     id="fullName"
                     placeholder="Nhập họ và tên..."
                   />
+                  <p class="text-error-fullName --text-error"></p>
                 </div>
                 <div class="form__group">
                   <input
-                    required
                     type="email"
                     name="email"
                     id="email"
                     placeholder="Nhập emai..."
                   />
+                  <p class="text-error-email --text-error"></p>
                 </div>
                 <div class="form__group">
                   <input
-                    required
                     type="text"
                     name="phoneNumber"
                     id="phoneNumber"
                     placeholder="Nhập số điện thoại..."
                   />
+                  <p class="text-error-phoneNumber --text-error"></p>
                 </div>
                 <div class="form__group">
                   <textarea
@@ -557,6 +576,7 @@
                     rows="10"
                     placeholder="Để lại lời nhắn cho chúng tôi..."
                   ></textarea>
+                  <p class="text-error-content --text-error"></p>
                 </div>
                 <button type="submit" class="btn__submit">
                   <p>Gửi đi</p>
@@ -574,19 +594,19 @@
             hàng và marketing qua zalo.
           </p>
           <div class="wrapper__box">
-            <div class="box__item">
+            <div class="box__item" data-aos="fade-right">
               <img src="./img/UserGear.png" alt="quan li ban hang" />
               <p>QUẢN LÝ KHÁCH HÀNG</p>
             </div>
-            <div class="box__item">
+            <div class="box__item" data-aos="fade-right">
               <img src="./img/Trophy.png" alt="quan li ban hang" />
               <p>CHĂM SÓC KHÁCH HÀNG</p>
             </div>
-            <div class="box__item">
+            <div class="box__item" data-aos="fade-left">
               <img src="./img/Handshake.png" alt="quan li ban hang" />
               <p>HỖ TRỢ BÁN HÀNG</p>
             </div>
-            <div class="box__item">
+            <div class="box__item" data-aos="fade-left">
               <img src="./img/AndroidLogo.png" alt="quan li ban hang" />
               <p>CÔNG NGHỆ AI</p>
             </div>
@@ -600,97 +620,89 @@
             Mỗi khách hàng là một nền móng đóng góp sự phát triển và cơ hội để
             chúng tôi cháy hết mình phục vụ tốt nhất.
           </p>
-          <div class="wrapper__slider">
-            <div class="slider__item">
-              <div class="wrapper__grid">
-                <div class="grid__item">
-                  <div class="grid__item-left">
-                    <img src="./img/customer-1.jpg" alt="addy spa" />
-                  </div>
-                  <div class="grid__item-right">
-                    <div class="customer__name-and-star">
-                      <h4>Thanh Nguyễn</h4>
-                      <div class="wrapper__star">
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                      </div>
-                    </div>
-                    <p class="text">
-                      " Tôi rất hài lòng về sản phẩm dịch vụ của bạn. Hy vọng
-                      chúng ta sẽ tiếp tục hợp tác với nhau lâu dài nhé "
-                    </p>
-                    <span class="sub__text">Giám đốc kinh doanh salon tóc</span>
+          <div class="wrapper__slider" data-aos="fade-up">
+            <div class="grid__item">
+              <div class="grid__item-left">
+                <img src="./img/customer-1.jpg" alt="addy spa" />
+              </div>
+              <div class="grid__item-right">
+                <div class="customer__name-and-star">
+                  <h4>Thanh Nguyễn</h4>
+                  <div class="wrapper__star">
+                    <img src="./img/Star.png" alt="star" />
+                    <img src="./img/Star.png" alt="star" />
+                    <img src="./img/Star.png" alt="star" />
+                    <img src="./img/Star.png" alt="star" />
                   </div>
                 </div>
-                <div class="grid__item">
-                  <div class="grid__item-left">
-                    <img src="./img/customer-2.jpg" alt="addy spa" />
-                  </div>
-                  <div class="grid__item-right">
-                    <div class="customer__name-and-star">
-                      <h4>Lina Nguyễn</h4>
-                      <div class="wrapper__star">
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                      </div>
-                    </div>
-                    <p class="text">
-                      " Tôi rất hài lòng về phần mềm của bạn. Vấn đề chăm sóc và
-                      giới thiêu sản phẩm được khắc phục với chi phí cực thấp "
-                    </p>
-                    <span class="sub__text">Quản lí Thẩm mỹ viện cao cấp</span>
-                  </div>
-                </div>
+                <p class="text">
+                  " Tôi rất hài lòng về sản phẩm dịch vụ của bạn. Hy vọng chúng
+                  ta sẽ tiếp tục hợp tác với nhau lâu dài nhé "
+                </p>
+                <span class="sub__text">Giám đốc kinh doanh salon tóc</span>
               </div>
             </div>
-            <div class="slider__item">
-              <div class="wrapper__grid">
-                <div class="grid__item">
-                  <div class="grid__item-left">
-                    <img src="./img/customer-3.jpg" alt="addy spa" />
-                  </div>
-                  <div class="grid__item-right">
-                    <div class="customer__name-and-star">
-                      <h4>Khang</h4>
-                      <div class="wrapper__star">
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                      </div>
-                    </div>
-                    <p class="text">
-                      " Lượng khách hàng hằng tháng của bên Khang rất nhiều,
-                      phần mềm trở thành một công cụ không thể thiếu của Khang "
-                    </p>
-                    <span class="sub__text">Trưởng phòng Tour du lịch </span>
+            <div class="grid__item">
+              <div class="grid__item-left">
+                <img src="./img/customer-2.jpg" alt="addy spa" />
+              </div>
+              <div class="grid__item-right">
+                <div class="customer__name-and-star">
+                  <h4>Lina Nguyễn</h4>
+                  <div class="wrapper__star">
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
                   </div>
                 </div>
-                <div class="grid__item">
-                  <div class="grid__item-left">
-                    <img src="./img/customer-4.jpg" alt="addy spa" />
-                  </div>
-                  <div class="grid__item-right">
-                    <div class="customer__name-and-star">
-                      <h4>Trần My</h4>
-                      <div class="wrapper__star">
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                        <img src="./img/Star.png" alt="start" />
-                      </div>
-                    </div>
-                    <p class="text">
-                      " Mình là một trong những người dùng đầu tiên của bên bạn.
-                      Rất cảm ơn vì luôn hỗ trợ kịp thời "
-                    </p>
-                    <span class="sub__text">Trợ lý kinh doanh BĐS</span>
+                <p class="text">
+                  " Tôi rất hài lòng về phần mềm của bạn. Vấn đề chăm sóc và
+                  giới thiêu sản phẩm được khắc phục với chi phí cực thấp "
+                </p>
+                <span class="sub__text">Quản lí Thẩm mỹ viện cao cấp</span>
+              </div>
+            </div>
+            <div class="grid__item">
+              <div class="grid__item-left">
+                <img src="./img/customer-3.jpg" alt="addy spa" />
+              </div>
+              <div class="grid__item-right">
+                <div class="customer__name-and-star">
+                  <h4>Khang</h4>
+                  <div class="wrapper__star">
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
                   </div>
                 </div>
+                <p class="text">
+                  " Lượng khách hàng hằng tháng của bên Khang rất nhiều, phần
+                  mềm trở thành một công cụ không thể thiếu của Khang "
+                </p>
+                <span class="sub__text">Trưởng phòng Tour du lịch </span>
+              </div>
+            </div>
+            <div class="grid__item">
+              <div class="grid__item-left">
+                <img src="./img/customer-4.jpg" alt="addy spa" />
+              </div>
+              <div class="grid__item-right">
+                <div class="customer__name-and-star">
+                  <h4>Trần My</h4>
+                  <div class="wrapper__star">
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                    <img src="./img/Star.png" alt="start" />
+                  </div>
+                </div>
+                <p class="text">
+                  " Mình là một trong những người dùng đầu tiên của bên bạn. Rất
+                  cảm ơn vì luôn hỗ trợ kịp thời "
+                </p>
+                <span class="sub__text">Trợ lý kinh doanh BĐS</span>
               </div>
             </div>
           </div>
@@ -728,15 +740,28 @@
           <div class="footer-right">
             <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
             <div class="wrapper__icon">
-              <img src="./img/whatsapp.svg" alt="phone" />
-              <img src="./img/facebook.svg" alt="facebook" />
-              <img src="./img/zalo.svg" alt="zalo" />
+              <a class="wrapper__icon-footer" href=""
+                ><img src="./img/whatsapp.svg" alt="phone"
+              /></a>
+              <a
+                class="wrapper__icon-footer"
+                href="https://www.facebook.com/people/Addy-CRM/100076907385321/?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo"
+                target="_blank"
+                ><img src="./img/facebook.svg" alt="facebook"
+              /></a>
+              <a
+                class="wrapper__icon-footer"
+                href="https://zalo.me/g/pdvccl132?utm_source=zalo&utm_medium=zalo&utm_campaign=zalo"
+                target="_blank"
+                ><img src="./img/zalo.svg" alt="zalo"
+              /></a>
             </div>
             <img src="./img/sale-noti-20221222010710-hueck.png" alt="addy" />
           </div>
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="text/javascript" src="js/flickity.pkgd.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </body>
