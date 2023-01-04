@@ -233,6 +233,10 @@ function validateForm() {
     textErrorEmail.textContent = "Email sai định dạng.";
     inputEmail.classList.add("error");
     return false;
+  } else if (phoneNumber.length > 10) {
+    textErrorPhoneNumber.textContent = "Số điện thoại tối đa 10 kí tự.";
+    inputPhoneNumber.classList.add("error");
+    return false;
   } else if (email !== "") {
     textErrorEmail.textContent = "";
     inputEmail.classList.remove("error");
@@ -286,13 +290,16 @@ function validateEmail() {
 }
 function validatePhoneNumber() {
   let phoneNumber = document.forms["myForm"]["phoneNumber"].value;
-
   if (phoneNumber == "") {
     textErrorPhoneNumber.textContent = "Vui lòng nhập số điện thoại.";
     inputPhoneNumber.classList.add("error");
     return false;
   } else if (!phoneNumber.match(PATTERN.PHONE)) {
     textErrorPhoneNumber.textContent = "Số điện thoại sai định dạng.";
+    inputPhoneNumber.classList.add("error");
+    return false;
+  } else if (phoneNumber.length > 10) {
+    textErrorPhoneNumber.textContent = "Số điện thoại tối đa 10 kí tự.";
     inputPhoneNumber.classList.add("error");
     return false;
   } else if (phoneNumber !== "") {
