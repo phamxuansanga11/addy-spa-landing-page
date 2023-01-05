@@ -10,7 +10,6 @@ function updateCell() {
     return;
   }
 }
-
 updateCell();
 
 // js of slider
@@ -27,7 +26,13 @@ var flkty = new Flickity(elem, {
 });
 
 //main js
-const navItem = document.querySelectorAll(".header__menu-item");
+const navItem = document.querySelectorAll(
+  ".header .wrapper__header .header__menu li .header__menu-item"
+);
+
+const navItemMobile = document.querySelectorAll(
+  ".header .wrapper__header .header__menu-mobile .header__menu-mobile__nav .header__nav-mobile li a"
+);
 
 //get menu mobile
 const menuBar = document.querySelector(".icon__bar");
@@ -35,25 +40,70 @@ const menuMobile = document.querySelector(".header__menu-mobile");
 //close menu
 const btnCloseMenu = document.querySelector(".btn__close");
 
-//click menu scroll to section
-// const sections = [];
+//click menu scroll to section desktop
+const sections = [];
 navItem.forEach((tagA, index) => {
   let href = tagA.getAttribute("href");
   let className = href.replace("#", "");
   let classSection = document.querySelector("." + className);
-  // sections.push(classSection);
+  sections.push(classSection);
   tagA.addEventListener("click", (e) => {
     e.preventDefault();
-    menuMobile.classList.remove("active");
-    navItem.forEach((item) => {
-      item.classList.remove("active");
-    });
     let positionSection = classSection.offsetTop;
     window.scrollTo({
       top: positionSection - 80,
       behavior: "smooth",
     });
-    tagA.classList.add("active");
+  });
+});
+
+//event scroll to section auto active menu desktop
+window.addEventListener("scroll", (e) => {
+  e.preventDefault();
+  let positionScrollY = window.pageYOffset;
+  sections.forEach((section, index) => {
+    if (positionScrollY > section.offsetTop - 140) {
+      navItem.forEach((removeTagA) => {
+        removeTagA.classList.remove("active");
+      });
+      navItem[index].classList.add("active");
+    } else {
+      navItem[index].classList.remove("active");
+    }
+  });
+});
+
+//click menu scroll to section mobile
+const sectionsMobile = [];
+navItemMobile.forEach((tagA) => {
+  let href = tagA.getAttribute("href");
+  let className = href.replace("#", "");
+  let classSection = document.querySelector("." + className);
+  sectionsMobile.push(classSection);
+  tagA.addEventListener("click", (e) => {
+    e.preventDefault();
+    menuMobile.classList.remove("active");
+    let positionSection = classSection.offsetTop;
+    window.scrollTo({
+      top: positionSection - 80,
+      behavior: "smooth",
+    });
+  });
+});
+
+//event scroll to section auto active menu mobile
+window.addEventListener("scroll", (e) => {
+  e.preventDefault();
+  let positionScrollY = window.pageYOffset;
+  sectionsMobile.forEach((section, index) => {
+    if (positionScrollY > section.offsetTop - 140) {
+      navItemMobile.forEach((removeTagA) => {
+        removeTagA.classList.remove("active");
+      });
+      navItemMobile[index].classList.add("active");
+    } else {
+      navItemMobile[index].classList.remove("active");
+    }
   });
 });
 
@@ -64,7 +114,6 @@ const btnContactOfMenuMobile = document.querySelector(
 
 btnContactOfMenuMobile.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(btnContactOfMenuMobile);
   let classSection = document.querySelector(".contact");
   let positionSection = classSection.offsetTop;
   window.scrollTo({
@@ -202,7 +251,7 @@ const inputContent = document.getElementById("content");
 
 const PATTERN = {
   EMAIL: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
-  PHONE: /((^(\+84|84|0|0084){1})(3|5|7|8|9))+([0-9]{8})\b/i,
+  PHONE: /((^(\+84|84|0|0084){1})(3|5|7|8|9))+([0-9]{8})$\b/i,
   VARIABLE_NAME: /^[a-zA-Z_$][a-zA-Z_$0-9]*$/i,
   ONLY_NUMBER: /^[0-9]*$/,
 };
@@ -232,10 +281,6 @@ function validateForm() {
   } else if (!email.match(PATTERN.EMAIL)) {
     textErrorEmail.textContent = "Email sai định dạng.";
     inputEmail.classList.add("error");
-    return false;
-  } else if (phoneNumber.length > 10) {
-    textErrorPhoneNumber.textContent = "Số điện thoại tối đa 10 kí tự.";
-    inputPhoneNumber.classList.add("error");
     return false;
   } else if (email !== "") {
     textErrorEmail.textContent = "";
@@ -296,10 +341,6 @@ function validatePhoneNumber() {
     return false;
   } else if (!phoneNumber.match(PATTERN.PHONE)) {
     textErrorPhoneNumber.textContent = "Số điện thoại sai định dạng.";
-    inputPhoneNumber.classList.add("error");
-    return false;
-  } else if (phoneNumber.length > 10) {
-    textErrorPhoneNumber.textContent = "Số điện thoại tối đa 10 kí tự.";
     inputPhoneNumber.classList.add("error");
     return false;
   } else if (phoneNumber !== "") {
